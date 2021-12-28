@@ -1,9 +1,13 @@
 A spring-boot web appliation that lets user to build a resume.
 
 
-***************************************************************
-For more infortation please visit Wiki
-https://github.com/elizavetaaaa/resume-Spring/wiki
+This is a sample demo for developing a Resume Builder
+
+
+Contributors :
+   Mahipathi Yugandhar (https://github.com/Yugandhar-3)
+   Dwarampudi Sai Reddy ()
+   Puppala Priya ()
 
 
 
