@@ -53,7 +53,7 @@
         }
         .black{
             font-weight: 100;
-            color:black;
+            color: #000000;
         }
         #job{
             margin-top: 50px;
@@ -100,6 +100,27 @@
             </tr>
         </table>
 
+        <h1>Education</h1>
+        <table>
+            <tr>
+                <td><h2>CollegeName:</h2></td>
+                <td><h2 class="black" th:text="${user.clgname}"></h2></td>
+            </tr>
+            <tr>
+                <td><h2>Year of Completion:</h2></td>
+                <td><h2 class="black" th:text="${user.year}"></h2></td>
+            </tr>
+            <tr>
+                <td><h2>Place:</h2></td>
+                <td><h2 class="black" th:text="${user.place}"></h2></td>
+            </tr>
+            <tr>
+                <td><h2>Specialization:</h2></td>
+                <td><h2 class="black" th:text="${user.specialization}"></h2></td>
+            </tr>
+
+        </table>
+
         <h1>Contact</h1>
         <table>
             <tr>
@@ -121,7 +142,13 @@
 
             </table>
 
-        <h1>Skills</h1>
+
+
+
+
+    </div>
+    <div id="sidebar">
+        <h1 id="job ">Skills</h1>
         <table>
             <tr>
                 <td><h2>Languages:</h2></td>
@@ -132,11 +159,6 @@
                 <td><h2 class="black" th:text="${user.technicalSkills}"></h2></td>
             </tr>
         </table>
-
-
-
-    </div>
-    <div id="sidebar">
 
         <h1 id="job">Position to Apply</h1>
         <h2 class="black" th:text="${user.position}"></h2>

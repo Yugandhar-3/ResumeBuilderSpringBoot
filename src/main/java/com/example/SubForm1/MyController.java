@@ -50,7 +50,7 @@ public class MyController implements WebMvcConfigurer {
     public String preview(User user,HttpServletRequest request)
     {
         request.setAttribute("user",user);
-        return "showMessage";
+        return "template1";
     }
 
     @RequestMapping("/show")
@@ -58,6 +58,7 @@ public class MyController implements WebMvcConfigurer {
     {
         return"showMessage";
     }
+
 
 
 

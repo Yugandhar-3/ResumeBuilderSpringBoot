@@ -62,13 +62,26 @@
                 <p  th:if="${#fields.hasErrors('phoneNumber')}" th:errors="*{phoneNumber}"  class = "error">Ph.number Error</p>
                 <input type="text" th:field="*{phoneNumber}" />
 
-
-
             </fieldset>
 
             <fieldset>
+                <legend><span class="number">2</span>EDUCATION</legend>
+                <label>College Name:</label>
+                <p  th:if="${#fields.hasErrors('clgname')}" th:errors="*{clgname}"  class = "error">clgname Error</p>
+                <input input type="text" th:field="*{clgname}" />
+                <label>Year of Completion:</label>
+                <p  th:if="${#fields.hasErrors('year')}" th:errors="*{year}"  class = "error">year Error</p>
+                <input input type="text" th:field="*{year}" />
+                <label>Specialization:</label>
+                <p  th:if="${#fields.hasErrors('specialization')}" th:errors="*{specialization}"  class = "error">specialization Error</p>
+                <input input type="text" th:field="*{specialization}" />
+                <label>Place:</label>
+                <p  th:if="${#fields.hasErrors('place')}" th:errors="*{place}"  class = "error">place Error</p>
+                <input input type="text" th:field="*{place}" />
+            </fieldset>
+            <fieldset>
 
-                <legend><span class="number">2</span>SKILLS</legend>
+                <legend><span class="number">3</span>SKILLS</legend>
 
                 <label>Languages:</label>
                 <p  th:if="${#fields.hasErrors('languages')}" th:errors="*{languages}"  class = "error">Lng Error</p>
@@ -84,7 +97,7 @@
             </fieldset>
                 <fieldset>
 
-                <legend><span class="number">3</span>PROFESSIONAL INFO</legend>
+                <legend><span class="number">4</span>PROFESSIONAL INFO</legend>
 
                 <!--workDone--> <label for="bio"> Professional Bio (specify work done ):</label>
 

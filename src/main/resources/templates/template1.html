@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.w3.org/1999/xhtml" lang="eng">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>RESUME</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html {
+            height: 100%;
+        }
+
+        body {
+            min-height: 100%;
+            background: #eee;
+            font-family: 'Lato', sans-serif;
+            font-weight: 400;
+            color: #222;
+            font-size: 14px;
+            line-height: 26px;
+            padding-bottom: 50px;
+        }
+
+        .container {
+            max-width: 700px;
+            background: #fff;
+            margin: 0px auto 0px;
+            box-shadow: 1px 1px 2px #DAD7D7;
+            border-radius: 3px;
+            padding: 40px;
+            margin-top: 50px;
+        }
+
+        .header {
+            margin-bottom: 30px;
+        }
+
+        .full-name {
+            font-size: 40px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+
+        .first-name {
+            font-weight: 700;
+        }
+
+        .last-name {
+            font-weight: 300;
+        }
+
+        .contact-info {
+            margin-bottom: 20px;
+        }
+
+        .email , .phone {
+            color: #999;
+            font-weight: 300;
+        }
+
+        .separator {
+            height: 10px;
+            display: inline-block;
+            border-left: 2px solid #999;
+            margin: 0px 10px;
+        }
+
+        .position {
+            font-weight: bold;
+            display: inline-block;
+            margin-right: 10px;
+            text-decoration: underline;
+        }
+
+
+
+        .details {
+            line-height: 20px;
+        }
+
+        .section {
+            margin-bottom: 40px;
+        }
+
+        .section:last-of-type {
+            margin-bottom: 0px;
+        }
+
+        .section__title {
+            letter-spacing: 2px;
+            color: #54AFE4;
+            font-weight: bold;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .section__list-item {
+            margin-bottom: 40px;
+        }
+
+        .section__list-item:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .left ,
+        .right {
+            vertical-align: top;
+            display: inline-block;
+        }
+
+        .left {
+            width: 60%;
+        }
+
+        .right {
+            tex-align: right;
+            width: 39%;
+        }
+
+        .name {
+            font-weight: bold;
+        }
+
+        a {
+            text-decoration: none;
+            color: #000;
+            font-style: italic;
+        }
+
+        a:hover {
+            text-decoration: underline;
+            color: #000;
+        }
+
+        .skills {
+
+        }
+
+        .skills__item {
+            margin-bottom: 10px;
+        }
+
+        .skills__item .right {}
+        input {
+            display: none;
+        }
+
+        label {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            background: #C3DEF3;
+            border-radius: 20px;
+            margin-right: 3px;
+        }
+
+        input:checked + label {
+            background: #79A9CE;
+        }
+        #btn{
+            cursor: pointer;
+            margin-left: 750px;
+            width:100px;
+            height:50px;
+            /*background-color:#0C9;
+            color:#FFF;*/
+            border-radius:25px;
+            text-align:center;
+            box-shadow: 6px 3px 3px #999;
+        }
+
+
+    </style>
+    <link href='https://fonts.googleapis.com/css?family=Lato:400,300,700' rel='stylesheet' type='text/css'>
+
+</head>
+<body>
+
+<div class="container">
+    <div class="header">
+        <div class="full-name">
+            <span class="first-name" th:text="${user.name}"></span>
+            <span class="last-name" th:text="${user.surname}"></span>
+        </div>
+        <div class="contact-info">
+            <span class="email">Email: </span>
+            <span class="email-val" th:text="${user.email}"></span>
+            <span class="separator"></span>
+            <span class="phone">Phone: </span>
+            <span class="phone-val" th:text="${user.phoneNumber}"></span>
+        </div>
+
+        <div class="about">
+            <span class="position" th:text="${user.position}"></span>
+        </div>
+    </div>
+    <div class="details">
+        <div class="section">
+            <div class="section__title">Education</div>
+            <div class="section__list">
+                <div class="section__list-item">
+                    <div class="left">
+                        <div class="name" th:text="${user.clgname}"></div>
+                        <div class="duration" th:text="${user.year}"></div>
+                        <div class="addr" th:text="${user.specialization}"></div>
+                        <div class="addr" th:text="${user.place}"></div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+        <div class="section">
+            <div class="section__title">Contact</div>
+            <div class="section__list">
+                <div class="section__list-item">
+                    <div class="left">
+                        <div class="name">Address</div>
+                        <div class="addr" th:text="${user.address}"></div>
+                        <div class="duration"th:text="${user.country}"></div>
+                    </div>
+                </div>
+                <div class="section__list-item">
+                    <div class="left">
+                        <div class="name" th:text="${user.linkedinprof}">Linkedin</div>
+                        <div class="addr" th:text="${user.codingprof}">Github</div>
+                        <div class="duration" th:text="${user.codingprof}">Coding</div>
+                    </div>
+                </div>
+                <div class="section__list-item">
+                    <div class="left">
+                        <div class="name">Professional Experience</div>
+                        <div class="desc"  th:text="${user.workDone}"></div>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+        <div class="section">
+            <div class="section__title">
+             Languages
+            </div>
+            <div class="section__list">
+                <div class="section__list-item" th:text="${user.languages}">
+                </div>
+            </div>
+        </div>
+        <div class="section">
+            <div class="section__title">
+                Technical Skills
+            </div>
+            <div class="section__list">
+                <div class="section__list-item" th:text="${user.technicalSkills}">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/0.4.1/html2canvas.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<script type="text/javascript">
+    $(document).on('click','#btn',function(){ let pdf = new jsPDF(); let section=$('body'); let page= function() { pdf.save('resume.pdf'); }; pdf.addHTML(section,page); })
+</script>
+<div id="footer">
+    <button id="btn"> Download Your CV</button>
+</div>
+</body>
+
+</html>

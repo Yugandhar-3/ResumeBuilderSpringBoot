@@ -49,12 +49,52 @@ public class User {
     public String interests;
     @NotEmpty(message = "Important! Please specify data about your experience.")
     public String workDone;
-    @NotEmpty(message = "Important! Please specify data about your experience.")
+    @NotEmpty(message = "Important! Please specify data about your linkedin.")
     private String linkedinprof;
-    @NotEmpty(message = "Important! Please specify data about your experience.")
+    @NotEmpty(message = "Important! Please specify data about your github.")
     private String githubprof;
-    @NotEmpty(message = "Important! Please specify data about your experience.")
+    @NotEmpty(message = "Important! Please specify data about your coding.")
     private String codingprof;
+    @NotEmpty(message = "Important! Please specify data about your clgname.")
+    private String clgname;
+    @NotEmpty(message = "Important! Please specify data about your specilization.")
+    private String specialization;
+    @NotEmpty(message = "Important! Please specify data about your place.")
+    private String place;
+    @NotEmpty(message = "Important! Please specify data about your year.")
+    private String year;
+
+    public String getClgname() {
+        return clgname;
+    }
+
+    public void setClgname(String clgname) {
+        this.clgname = clgname;
+    }
+
+    public String getSpecialization() {
+        return specialization;
+    }
+
+    public void setSpecialization(String specialization) {
+        this.specialization = specialization;
+    }
+
+    public String getPlace() {
+        return place;
+    }
+
+    public void setPlace(String place) {
+        this.place = place;
+    }
+
+    public String getYear() {
+        return year;
+    }
+
+    public void setYear(String year) {
+        this.year = year;
+    }
 
     public String getLinkedinprof() {
         return linkedinprof;
