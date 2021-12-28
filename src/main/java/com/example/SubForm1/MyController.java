@@ -1,6 +1,7 @@
 package com.example.SubForm1;
 
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
@@ -24,6 +25,8 @@ import java.io.IOException;
 
 @Controller
 public class MyController implements WebMvcConfigurer {
+    @Autowired
+    private Service service;
 
 	@Override
 	public void addViewControllers(ViewControllerRegistry registry) {
@@ -38,28 +41,32 @@ public class MyController implements WebMvcConfigurer {
 
     @PostMapping("/addUser")
     public String processForm(@Valid User user , BindingResult bindingResult) throws IOException {
-       // if (bindingResult.hasErrors()) {
-            return "addUser";
-        //}
+          return "addUser";
 
-        //System.out.println("we are here");
-        //return "showMessage";
     }
 
     @PostMapping("/preview")
     public String preview(User user,HttpServletRequest request)
     {
         request.setAttribute("user",user);
-        return "template1";
+        service.addUser(user);
+        return "preview";
     }
 
     @RequestMapping("/show")
     public String showPreview(HttpServletRequest request)
     {
+        User u= service.getUser();
+        request.setAttribute("user",u);
         return"showMessage";
     }
-
-
+    @RequestMapping("/temp")
+    public String templatepreview(HttpServletRequest request)
+    {
+        User u= service.getUser();
+        request.setAttribute("user",u);
+        return"template1";
+    }
 
 
     @PostMapping("/upload")
@@ -70,8 +77,4 @@ public class MyController implements WebMvcConfigurer {
 	   file.transferTo(new File(basedir+""));
         System.out.println("last step");
 	    return "redirect:/addUser";}
-
-
-    
-
     }
